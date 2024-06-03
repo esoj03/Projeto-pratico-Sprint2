@@ -1,0 +1,93 @@
+﻿URL's para testar as rotas no POSTMAN: AULAS
+- Criar uma aula:
+  Método: POST
+  URL: http://localhost:3000/aulas
+
+- Obter todas as aulas:
+  Método: GET
+  URL: http://localhost:3000/aulas
+
+- Obter uma aula por ID:
+  Método: GET
+  URL: http://localhost:3000/aulas/:id
+
+- Atualizar uma aula por ID:
+  Método: PUT
+  URL: http://localhost:3000/aulas/:id
+
+- Excluir uma aula por ID:
+  Método: DELETE
+  URL: http://localhost:3000/aulas/:id
+
+- Excluir uma aula por nome:
+  Método: DELETE
+  URL: http://localhost:3000/aulas/nome/:nome
+
+
+=======================================================
+URL's para testar as rotas no POSTMAN:
+- Criar um funcionário:
+  Método: POST
+  URL: http://localhost:3000/funcionarios
+
+- Obter todos os funcionários:
+  Método: GET
+  URL: http://localhost:3000/funcionarios
+
+- Atualizar um funcionário por ID:
+  Método: PUT
+  URL: http://localhost:3000/funcionarios/:id
+
+- Excluir um funcionário por ID:
+  Método: DELETE
+  URL: http://localhost:3000/funcionarios/:id
+
+- Excluir um funcionário por nome:
+  Método: DELETE
+  URL: http://localhost:3000/funcionarios/nome/:nome
+
+
+==============================================================
+URL's para testar as rotas no POSTMAN: FUNCIONARIOS
+- Criar um funcionário:
+  Método: POST
+  URL: http://localhost:3000/funcionarios
+
+- Obter todos os funcionários:
+  Método: GET
+  URL: http://localhost:3000/funcionarios
+
+- Atualizar um funcionário por ID:
+  Método: PUT
+  URL: http://localhost:3000/funcionarios/:id
+
+- Excluir um funcionário por ID:
+  Método: DELETE
+  URL: http://localhost:3000/funcionarios/:id
+
+- Excluir um funcionário por nome:
+  Método: DELETE
+  URL: http://localhost:3000/funcionarios/nome/:nome
+
+
+=================================================================
+URL's para testar as rotas no POSTMAN: PAGAMENTOS
+- Criar um pagamento:
+  Método: POST
+  URL: http://localhost:3000/pagamentos
+
+- Obter todos os pagamentos:
+  Método: GET
+  URL: http://localhost:3000/pagamentos
+
+- Atualizar um pagamento por ID:
+  Método: PUT
+  URL: http://localhost:3000/pagamentos/:id
+
+- Excluir um pagamento por ID:
+  Método: DELETE
+  URL: http://localhost:3000/pagamentos/:id
+
+- Excluir um pagamento por nome:
+  Método: DELETE
+  URL: http://localhost:3000/pagamentos/nome/:nome

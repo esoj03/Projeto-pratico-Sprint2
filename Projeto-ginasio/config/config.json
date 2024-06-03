@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "jose",
+    "database": "wishlist_dev",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "jose",
+    "database": "GYM",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "teste_3wws_user",
+    "password": "vX2uoaz2Rr00369PGyiZQhvBDu9Y841f",
+    "database": "teste_3wws",
+    "dialectOptions": {
+      "ssl": {
+        "rejectUnauthorized": true
+      }
+    },
+    "dialect": "postgres"
+  }
+}
