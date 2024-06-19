@@ -1,0 +1,108 @@
+﻿
+Descrição do Projeto: Sistema de Gerenciamento de Ginásio
+
+Visão Geral
+O Sistema de Gerenciamento de Ginásio é uma aplicação web desenvolvida para facilitar a administração de ginásios. Ele fornece uma interface para gerenciar membros, funcionários, aulas e pagamentos, oferecendo um sistema eficiente para manter registros e realizar operações administrativas de maneira simples e eficaz.
+
+Objetivos do Projeto
+- Gerenciamento de Membros: Cadastro, atualização, consulta e remoção de membros do ginásio.
+- Gerenciamento de Funcionários: Controle dos funcionários com funcionalidades similares às de membros.
+- Gerenciamento de Aulas: Administração das aulas oferecidas, incluindo criação e edição.
+- Gerenciamento de Pagamentos: Registro e acompanhamento de pagamentos realizados pelos membros.
+- Autenticação de Usuários: Cadastro, login e logout seguros, com proteção de rotas baseada em JWT.
+
+Estrutura do Projeto
+ 1. Modelos (Models)
+
+    Os modelos definem a estrutura das tabelas no banco de dados e suas interações. A aplicação utiliza o Sequelize ORM para facilitar o mapeamento de objetos para tabelas. Principais modelos incluem:
+
+    - Membro: Armazena informações sobre os membros do ginásio.
+    - Funcionário: Contém dados dos funcionários.
+    - Aula: Representa as aulas oferecidas.
+    - Pagamento: Registra os pagamentos efetuados.
+    - Usuário: Gerencia as credenciais dos usuários para autenticação.
+
+ 2. Controladores (Controllers)
+
+    Os controladores contêm a lógica de negócios e respondem às requisições dos usuários, manipulando dados dos modelos:
+
+    - membroController.js
+    - funcionarioController.js
+    - aulaController.js
+    - pagamentoController.js
+    - usuarioController.js
+
+Cada controlador lida com operações CRUD (Criar, Ler, Atualizar, Excluir) e autenticação de usuários.
+
+ 3. Rotas (Routes)
+
+    As rotas mapeiam URLs para funções nos controladores, conectando a interface do usuário com a lógica do servidor:
+
+    - membroRoutes.js
+    - funcionarioRoutes.js
+    - aulaRoutes.js
+    - pagamentoRoutes.js
+    - usuarioRoutes.js
+
+ 4. Middleware
+
+    O middleware inclui funções que processam as requisições antes de chegarem aos controladores, como verificação de autenticação via JWT:
+
+    - requireLogin: Protege rotas que requerem autenticação.
+
+ 5. Interfaces de Usuário
+
+    A interface web fornece um front-end para interação com o sistema, construído com HTML e CSS:
+
+    - Cadastro: `public/html/cadastro.html`
+    - Login: `public/html/login.html`
+    - Página Principal: `public/html/index.html`
+
+ Fluxo de Trabalho
+
+    1. Cadastro de Usuário:
+    - O usuário acessa a página de cadastro e insere seus dados.
+    - Os dados são enviados ao servidor, onde são verificados, hash da senha é gerado e o usuário é salvo no banco de dados.
+
+    2. Login:
+    - O usuário acessa a página de login e insere suas credenciais.
+    - O servidor valida as credenciais e, se corretas, gera um token JWT que é armazenado em um cookie de sessão.
+    - O usuário é redirecionado para a página principal.
+
+    3. Logout:
+    - O usuário solicita logout, o servidor invalida o cookie JWT e redireciona para a página de login.
+
+    4. Gerenciamento:
+    - A partir da página principal, o usuário pode acessar seções específicas para gerenciar membros, funcionários, aulas e pagamentos.
+
+Tecnologias Utilizadas
+    - Back-end: Node.js, Express.js
+    - Front-end: HTML, CSS, JavaScript
+    - Banco de Dados: SQLite (pode ser adaptado para outros sistemas, como MySQL ou PostgreSQL)
+    - ORM: Sequelize
+    - Autenticação: JSON Web Tokens (JWT)
+
+Instalação e Configuração
+    Para executar o projeto localmente:
+
+    1. Clonar o repositório:
+    git clone <URL-do-repositório>
+    cd Projeto-ginasio
+    
+    2. Instalar dependências:
+    npm install
+    
+    3. Configurar banco de dados:
+    Ajustar o arquivo de configuração do Sequelize (`config/config.js`) conforme necessário.
+
+    4. Executar migrações:
+    npx sequelize-cli db:migrate
+    
+    5. Iniciar o servidor:
+    npm start
+    
+    6. Acessar a aplicação:
+    Abrir o navegador e navegar para `http://localhost:3000`.
+
+Considerações Finais
+Este projeto fornece uma base sólida para um sistema de gerenciamento de ginásio, com funcionalidades de gerenciamento de usuários e operações básicas de CRUD. É facilmente extensível e personalizável conforme as necessidades específicas do ginásio.

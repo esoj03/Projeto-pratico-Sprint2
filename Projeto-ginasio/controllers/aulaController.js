@@ -17,6 +17,7 @@ exports.getAulas = async (req, res) => {
     try {
         const aulas = await Aula.findAll();
         res.json(aulas);
+        
     } catch (error) {
         res.status(500).json({ error: 'Internal Server Error' });
     }

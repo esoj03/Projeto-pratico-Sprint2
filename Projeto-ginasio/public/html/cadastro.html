@@ -1,0 +1,73 @@
+﻿<!-- public/html/cadastro.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Sistema de Gerenciamento de Ginásio</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/images/logo.png" alt="Logo do Ginásio">
+            </div>
+        </div>
+    </header>
+    <main class="cadastro-page">
+        <div class="container">
+            <div class="cadastro-form">
+                <h2>Cadastro</h2>
+                <form id="cadastroForm">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn">Cadastrar</button>
+                </form>
+                <p>Já tem uma conta? <a href="/login">Faça login aqui</a></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sistema de Gerenciamento de Ginásio</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            try {
+                const response = await fetch('/api/cadastro', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nome, email, password })
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    alert('Cadastro bem-sucedido!');
+                    window.location.href = '/login'; // Redireciona para a página de login
+                } else {
+                    alert(result.message || 'Erro ao cadastrar.');
+                }
+            } catch (error) {
+                alert('Erro ao cadastrar.');
+                console.error('Erro:', error);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -26,7 +26,8 @@ describe('Testes das Rotas de Membros', () => {
     const novoMembro = {
         nome: 'Novo Membro',
         email: 'novo@membro.com',
-    
+        sobrenome:'menbro novo',
+        
     };
     const res = await request(app)
         .post('/membros')
